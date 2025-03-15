@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邀请吃饭</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #agree {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #disagree {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>你愿意和我去吃饭吗？</h1>
+    <div>
+        <button id="agree" onclick="closeWindow()">同意</button>
+        <button id="disagree" onclick="enlargeAgreeButton()">不同意</button>
+    </div>
+
+    <script>
+        function enlargeAgreeButton() {
+            const agreeButton = document.getElementById('agree');
+            const currentSize = parseInt(getComputedStyle(agreeButton).fontSize);
+            agreeButton.style.fontSize = (currentSize + 5) + 'px';
+            agreeButton.style.padding = (parseInt(agreeButton.style.padding.split('px')[0]) + 2) + 'px ' + (parseInt(agreeButton.style.padding.split('px')[2]) + 5) + 'px';
+        }
+
+        function closeWindow() {
+            alert('太好啦，我们一起去吃饭！');
+            window.close();
+        }
+    </script>
+</body>
+
+</html>
